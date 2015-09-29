@@ -42,15 +42,13 @@ public class MainActivity extends AppCompatActivity {
         //Get item text
         String itemText = etNewItem.getText().toString();
         //add item text to list view through adapter
-        if ( itemText.length() == 0) {
-            Toast toast = Toast.makeText(this,"Empty TODO item can't added", Toast.LENGTH_SHORT);
+        if (itemText.length() == 0) {
+            Toast toast = Toast.makeText(this, "Empty TODO item can't added", Toast.LENGTH_SHORT);
             toast.show();
 
         } else {
             new WriteItemsDBAsync().execute("");
         }
-
-
     }
 
     //Remove item from the todo list
@@ -128,18 +126,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-   @Override
-    protected void onRestart() {
-        super.onRestart();
-        refresh();
-    }
-   @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        cursor.close();
-        db.close();
 
-    }
     // Aysnc database calls
     //Run DB updates in async
     private class WriteItemsDBAsync extends AsyncTask<String, Void, Boolean> {
@@ -220,6 +207,19 @@ public class MainActivity extends AppCompatActivity {
                 toast.show();
             }
         }
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        refresh();
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        cursor.close();
+        db.close();
+
     }
 
 }
