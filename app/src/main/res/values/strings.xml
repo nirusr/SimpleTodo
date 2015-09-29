@@ -5,6 +5,7 @@
     <string name="etItem_hint">Enter a new Item</string>
     <string name="title_activity_edit_item">Edit Item</string>
     <string name="btnSave_text">Save</string>
+    <string name="edit_label">Edit Item Below:</string>
 
 
 </resources>
