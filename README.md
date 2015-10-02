@@ -30,5 +30,5 @@ The following **additional** features are implemented:
 ## Video Walkthrough 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://goo.gl/photos/firgXgWxgQsZVf757' title='Todo List Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src="https://goo.gl/photos/firgXgWxgQsZVf757" title='Todo List Video Walkthrough' width='' alt='Video Walkthrough' />
 https://goo.gl/photos/firgXgWxgQsZVf757
