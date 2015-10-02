@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private SQLiteDatabase db;
     private Cursor cursor;
     private CursorAdapter itemsAdapter;
+    private final int REQUEST_CODE = 20;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,8 +72,8 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(MainActivity.this, EditItemActivity.class);
                 intent.putExtra(EditItemActivity.TODO_INDEX, (int) id);
-                startActivity(intent);
-
+                //startActivity(intent);
+                startActivityForResult(intent, REQUEST_CODE);
             }
 
         };
@@ -210,10 +212,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        //super.onActivityResult(requestCode, resultCode, data);
+        if ( resultCode == RESULT_OK && requestCode == REQUEST_CODE ) {
+            refresh();
+            Toast toast = Toast.makeText(MainActivity.this,"Successfully edited todo task", Toast.LENGTH_SHORT);
+            toast.show();
+        }
+    }
+
+    /*@Override
     protected void onRestart() {
         super.onRestart();
         refresh();
-    }
+    }*/
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -221,5 +233,7 @@ public class MainActivity extends AppCompatActivity {
         db.close();
 
     }
+
+
 
 }

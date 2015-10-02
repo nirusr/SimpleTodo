@@ -22,6 +22,7 @@ import java.util.ArrayList;
 
 public class EditItemActivity extends AppCompatActivity {
     public static final String TODO_INDEX = "TODO_INDEX";
+    public static final String SUCCESS_CODE = "SUCCESS_CODE";
     int todo_index = 0;
     EditText edTodo;
     private ArrayList<String> items;
@@ -146,8 +147,12 @@ public class EditItemActivity extends AppCompatActivity {
         protected void onPostExecute(Boolean success) {
             super.onPostExecute(success);
             if ( success) {
-                Intent intent = new Intent(EditItemActivity.this, MainActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(EditItemActivity.this, MainActivity.class);
+                //startActivity(intent);
+                Intent intent = new Intent();
+                intent.putExtra(SUCCESS_CODE, "200");
+                setResult(RESULT_OK, intent);
+                finish();
             } else {
                 Toast toast = Toast.makeText(EditItemActivity.this,"TODO Database unavailable", Toast.LENGTH_SHORT);
                 toast.show();
