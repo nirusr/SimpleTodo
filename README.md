@@ -26,3 +26,9 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 * [X] Async Database insert, update and Delete to improve performance
+* 
+## Video Walkthrough 
+Here's a walkthrough of implemented user stories:
+
+<img src='https://goo.gl/photos/firgXgWxgQsZVf757' title=' Todo List Video Walkthrough' width='' alt='Video Walkthrough' />
+
